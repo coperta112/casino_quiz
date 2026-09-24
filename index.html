@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Roulette</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>QUIZ ROULETTE</h1>
+      <p class="subtitle">クイズをONにすると、対応するマスが消えます</p>
+    </header>
+
+    <div class="layout">
+      <section class="board-panel">
+        <div class="board-wrap">
+          <div id="board" class="board" aria-label="クイズボード"></div>
+        </div>
+        <div class="stats">
+          <span>消滅：<strong id="deadCount">0</strong></span>
+          <span>生存：<strong id="aliveCount">19</strong></span>
+          <span>ON：<strong id="onCount">0</strong></span>
+        </div>
+        <div class="control-row">
+          <button id="allOn" type="button">すべてON</button>
+          <button id="allOff" type="button">すべてOFF</button>
+          <button id="resetBoard" type="button" class="secondary">盤面をリセット</button>
+        </div>
+        <p class="help">マスを直接クリックすると、手動で消滅／復活できます。</p>
+      </section>
+
+      <section class="quiz-panel">
+        <div class="section-title">
+          <h2>クイズ一覧</h2>
+          <span id="quizCount"></span>
+        </div>
+        <div id="quizList" class="quiz-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="quizzes.js"></script>
+  <script>
+    const TOTAL = 19;
+    const manualDead = new Set();
+    const quizStates = quizzes.map(q => ({ ...q, on: Boolean(q.on) }));
+
+    const board = document.getElementById("board");
+    const quizList = document.getElementById("quizList");
+    const deadCount = document.getElementById("deadCount");
+    const aliveCount = document.getElementById("aliveCount");
+    const onCount = document.getElementById("onCount");
+    const quizCount = document.getElementById("quizCount");
+
+    // 0を最上段に横3マスで配置。
+    // その下は「1,2,3」「4,5,6」「7,8,9」...を縦方向に並べ、
+    // さらに10,11,12以降を続ける、6行×3列の配置です。
+    // ルーレットの赤マス（0〜18の範囲）
+    const RED = new Set([1, 3, 5, 7, 9, 12, 14, 16, 18]);
+
+    const boardOrder = [
+      0,
+      1, 2, 3,
+      4, 5, 6,
+      7, 8, 9,
+      10, 11, 12,
+      13, 14, 15,
+      16, 17, 18
+    ];
+
+    function getQuizDead() {
+      const dead = new Set();
+      quizStates.forEach(q => {
+        if (q.on) q.targets.forEach(n => dead.add(Number(n)));
+      });
+      return dead;
+    }
+
+    function renderBoard() {
+      board.innerHTML = "";
+      const quizDead = getQuizDead();
+
+      boardOrder.forEach((n, index) => {
+        const cell = document.createElement("button");
+        cell.type = "button";
+        cell.className = "cell";
+        cell.textContent = n;
+        cell.dataset.number = n;
+
+        if (index === 0) cell.classList.add("zero");
+        else cell.classList.add(RED.has(n) ? "red" : "black");
+
+        const dead = quizDead.has(n) || manualDead.has(n);
+        if (dead) cell.classList.add("dead");
+
+        const reasons = quizStates.filter(q => q.on && q.targets.includes(n)).length;
+        if (reasons > 0) {
+          cell.title = `${reasons}個のONクイズがこのマスを対象にしています`;
+        }
+
+        cell.addEventListener("click", () => {
+          if (manualDead.has(n)) manualDead.delete(n);
+          else manualDead.add(n);
+          render();
+        });
+
+        board.appendChild(cell);
+      });
+
+      const allDead = new Set([...quizDead, ...manualDead]);
+      deadCount.textContent = allDead.size;
+      aliveCount.textContent = TOTAL - allDead.size;
+      onCount.textContent = quizStates.filter(q => q.on).length;
+    }
+
+    function renderQuizzes() {
+      quizList.innerHTML = "";
+      quizCount.textContent = `${quizStates.length}問`;
+
+      quizStates.forEach((q, index) => {
+        const card = document.createElement("article");
+        card.className = `quiz-card ${q.on ? "active" : ""}`;
+        card.tabIndex = 0;
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-pressed", q.on);
+        const flip = () => {
+          q.on = !q.on;
+          render();
+        };
+        card.addEventListener("click", flip);
+        card.addEventListener("keydown", e => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            flip();
+          }
+        });
+
+        const top = document.createElement("div");
+        top.className = "quiz-top";
+
+        const number = document.createElement("span");
+        number.className = "quiz-number";
+        number.textContent = `Q${index + 1}`;
+
+        const toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = `toggle ${q.on ? "on" : ""}`;
+        toggle.textContent = q.on ? "ON" : "OFF";
+        toggle.tabIndex = -1;
+        toggle.setAttribute("aria-hidden", "true");
+
+        top.append(number, toggle);
+
+        const question = document.createElement("div");
+        question.className = "question";
+        question.textContent = q.question;
+
+        const answer = document.createElement("div");
+        answer.className = "answer";
+        answer.innerHTML = `<span>答え</span><strong></strong>`;
+        answer.querySelector("strong").textContent = q.answer;
+
+        const targets = document.createElement("div");
+        targets.className = "targets";
+        targets.innerHTML = "<span>対象マス</span>";
+        q.targets.forEach(n => {
+          const badge = document.createElement("b");
+          badge.textContent = n;
+          targets.appendChild(badge);
+        });
+
+        card.append(top, question, answer, targets);
+        quizList.appendChild(card);
+      });
+    }
+
+    function render() {
+      renderBoard();
+      renderQuizzes();
+    }
+
+    document.getElementById("allOn").addEventListener("click", () => {
+      quizStates.forEach(q => q.on = true);
+      render();
+    });
+
+    document.getElementById("allOff").addEventListener("click", () => {
+      quizStates.forEach(q => q.on = false);
+      render();
+    });
+
+    document.getElementById("resetBoard").addEventListener("click", () => {
+      manualDead.clear();
+      quizStates.forEach(q => q.on = false);
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>
