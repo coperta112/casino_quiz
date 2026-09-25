@@ -256,4 +256,226 @@ const quizzes = [
     ],
     "on": false
   },
+  {
+    "question": "2019年にリリースされた曲『香水』が代表曲のシンガーソングライターの名前は？",
+    "answer": "瑛人",
+    "targets": [
+      8
+    ],
+    "on": false
+  },
+  {
+    "question": "ハイタッチを英語にすると含まれる数字は？",
+    "answer": "5",
+    "targets": [
+      5
+    ],
+    "on": false
+  },
+  {
+    "question": "16進数でいう「D」っていくつ？",
+    "answer": "13",
+    "targets": [
+      13
+    ],
+    "on": false
+  },
+  {
+    "question": "ドラマ『イカゲーム』では優勝するまで何ゲームある？",
+    "answer": "6",
+    "targets": [
+      6
+    ],
+    "on": false
+  },
+  {
+    "question": "ゴルフのアルバトロス、マイナス何打？",
+    "answer": "3",
+    "targets": [
+      3
+    ],
+    "on": false
+  },
+  {
+    "question": "凸凹の合計の画数は？",
+    "answer": "10",
+    "targets": [
+      10
+    ],
+    "on": false
+  },
+  {
+    "question": "ルーレットの黒マスの数は？",
+    "answer": "9",
+    "targets": [
+      9
+    ],
+    "on": false
+  },
+  {
+    "question": "2で割り切れない数ってどんな数？",
+    "answer": "奇数",
+    "targets": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17
+    ],
+    "on": false
+  },
+  {
+    "question": "卓球は1セット何点先取？",
+    "answer": "11",
+    "targets": [
+      11
+    ],
+    "on": false
+  },
+  {
+    "question": "ところてん100gは何kcal？",
+    "answer": "2",
+    "targets": [
+      2
+    ],
+    "on": false
+  },
+  {
+    "question": "マインクラフトの昼の時間は現実で何分？",
+    "answer": "10",
+    "targets": [
+      10
+    ],
+    "on": false
+  },
+  {
+    "question": "「しちごさん」漢字にしたとき、すべて足すといくつ？",
+    "answer": "15",
+    "targets": [
+      15
+    ],
+    "on": false
+  },
+  {
+    "question": "「多くのライバルが激しい競争を繰り広げている既存の市場」これは何オーシャン？",
+    "answer": "レッド",
+    "targets": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      12,
+      14,
+      16,
+      18
+    ],
+    "on": false
+  },
+  {
+    "question": "午後って何時間ある？",
+    "answer": "12",
+    "targets": [
+      12
+    ],
+    "on": false
+  },
+  {
+    "question": "HoYoverseが配信しているゲームの略称『ZZZ』の正式名称に含まれる数字は？",
+    "answer": "0",
+    "targets": [
+      0
+    ],
+    "on": false
+  },
+  {
+    "question": "日本の成人は何歳からのこと？",
+    "answer": "18",
+    "targets": [
+      18
+    ],
+    "on": false
+  },
+  {
+    "question": "ドイツの国旗の一番上の色は？",
+    "answer": "黒",
+    "targets": [
+      2,4,6,8,10,11,13,15,17
+    ],
+    "on": false
+  },
+  {
+    "question": "prime number]日本語では何？",
+    "answer": "素数",
+    "targets": [
+      2,3,5,7,11,13,17
+    ],
+    "on": false
+  },
+  {
+    "question": "大富豪でジョーカーよりも強くなるカードはスペードのいくつ？",
+    "answer": "3",
+    "targets": [
+      3
+    ],
+    "on": false
+  },
+  {
+    "question": "テニスで0から1点決めると数字はいくつ？",
+    "answer": "15",
+    "targets": [
+      15
+    ],
+    "on": false
+  },
+  {
+    "question": "「Al」で表される元素の原子番号はいくつ？",
+    "answer": "13",
+    "targets": [
+      13
+    ],
+    "on": false
+  },
+  {
+    "question": "1ダースから4個なくなったら、残りはいくつ？",
+    "answer": "8",
+    "targets": [
+      8
+    ],
+    "on": false
+  },
+  {
+    "question": "ゴルフにおいて、カップに最も近いエリアの名前は？",
+    "answer": "グリーン",
+    "targets": [
+      0
+    ],
+    "on": false
+  },
+  {
+    "question": "収支で「Δ」がつくとき、これは何字？",
+    "answer": "赤",
+    "targets": [
+      1,3,5,7,9,12,14,16,18
+    ],
+    "on": false
+  },
+  {
+    "question": "24の約数は？",
+    "answer": "1,2,3,4,6,8,12",
+    "targets": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      12
+    ],
+    "on": false
+  }
 ];
