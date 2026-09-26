@@ -477,5 +477,205 @@ const quizzes = [
       12
     ],
     "on": false
+  },
+  {
+    "question": "約10年にわたって渋谷駅で飼い主の帰りを待ち続けた逸話の有名な秋田犬の名前は？",
+    "answer": "8",
+    "targets": [
+      8
+    ],
+    "on": false
+  },
+  {
+    "question": "白雪姫に登場する小人は何人？",
+    "answer": "7",
+    "targets": [
+      7
+    ],
+    "on": false
+  },
+  {
+    "question": "セブンイレブンの電子マネーの名称に含まれる数字は？",
+    "answer": "7",
+    "targets": [
+      7
+    ],
+    "on": false
+  },
+  {
+    "question": "『セブン-イレブン、いい気分』。んって何回言う？",
+    "answer": "3",
+    "targets": [
+      3
+    ],
+    "on": false
+  },
+  {
+    "question": "セブンイレブンのロゴに使われている色は赤とオレンジと何色？",
+    "answer": "緑",
+    "targets": [
+      0
+    ],
+    "on": false
+  },
+  {
+    "question": "「N]は元素記号だと何番目？",
+    "answer": "7",
+    "targets": [
+      7
+    ],
+    "on": false
+  },
+  {
+    "question": "「N」はアルファベットだと何文字目？",
+    "answer": "14",
+    "targets": [
+      14
+    ],
+    "on": false
+  },
+  {
+    "question": "英語にすると「N」が含まれる数字は？",
+    "answer": "1,7,9,10,11,13,14,15,16,17,18",
+    "targets": [
+        1,7,9,10,11,13,14,15,16,17,18
+    ],
+    "on": false
+  },
+  {
+    "question": "タコとイカの足を全部合わせると何本？",
+    "answer": "18",
+    "targets": [
+      18
+    ],
+    "on": false
+  },
+  {
+    "question": "タコとイカがもつ、内部を真空にすることで対象に密着する部位は何盤？",
+    "answer": "吸盤",
+    "targets": [
+      9
+    ],
+    "on": false
+  },
+  {
+    "question": "”麻雀の役””リュウイーソー”に含まれる色は？",
+    "answer": "緑",
+    "targets": [
+      0
+    ],
+    "on": false
+  },
+  {
+    "question": "”麻雀の役””リュウイーソー”に含まれる数字は？",
+    "answer": "1",
+    "targets": [
+      1
+    ],
+    "on": false
+  },
+  {
+    "question": "「鍛冶屋」を英語にした時に含まれる色は？",
+    "answer": "黒",
+    "targets": [
+      2,4,6,8,10,11,13,15,17
+    ],
+    "on": false
+  },
+  {
+    "question": "じゃんけんの手は何種類？",
+    "answer": "3",
+    "targets": [
+      3
+    ],
+    "on": false
+  },
+  {
+    "question": "2人でじゃんけん、自分と相手がだす手の種類は何通り？",
+    "answer": "9",
+    "targets": [
+      9
+    ],
+    "on": false
+  },
+  {
+    "question": "3人でじゃんけん、勝ち負けが決まる最大の指の合計は？",
+    "answer": "12",
+    "targets": [
+      12
+    ],
+    "on": false
+  },
+  {
+    "question": "3人でじゃんけん、同じ手であいこだった時の指の合計は？",
+    "answer": "0,6,15",
+    "targets": [
+      0,6,15
+    ],
+    "on": false
+  },
+  {
+    "question": "じゃんけんで負けてしまったらつく星の色は？",
+    "answer": "黒",
+    "targets": [
+      2,4,6,8,10,11,13,15,17
+    ],
+    "on": false
+  },
+  {
+    "question": "ジョーカーの入ったトランプを3人に配ると一人何枚？",
+    "answer": "18",
+    "targets": [
+      18
+    ],
+    "on": false
+  },
+  {
+    "question": "4色デック(4色のトランプ)でクラブは何色？",
+    "answer": "緑",
+    "targets": [
+      0
+    ],
+    "on": false
+  },
+  {
+    "question": "トランプのクラブは全部で何枚？",
+    "answer": "13",
+    "targets": [
+      13
+    ],
+    "on": false
+  },
+  {
+    "question": "サイコロの「4」の裏面の出目はいくつ？",
+    "answer": "3",
+    "targets": [
+      3
+    ],
+    "on": false
+  },
+  {
+    "question": "サイコロを使う遊び「ヨット」はサイコロをいくつ使う？",
+    "answer": "5",
+    "targets": [
+      5
+    ],
+    "on": false
+  },
+  {
+    "question": "2つのサイコロでゾロ目が出たとき、出目の合計はいくつ？",
+    "answer": "2,4,6,8,10,12",
+    "targets": [
+      2,4,6,8,10,12
+    ],
+    "on": false
+  },
+  {
+    "question": "ルーレットの19番、マスの色は？",
+    "answer": "赤",
+    "targets": [
+      1,3,5,7,9,12,14,16,18
+    ],
+    "on": false
   }
 ];
